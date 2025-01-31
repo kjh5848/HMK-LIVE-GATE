@@ -7,39 +7,37 @@
     <link rel="stylesheet" href="../css/style.css">
     <title>HMK Live Gate - Login</title>
 </head>
-<style>
 
-</style>
 <section class="display-login">
     <div class="contain-login">
         <h1 class="display-title">HMK Live Gate</h1>
 
         <!-- <form onsubmit="requestLogin(); return false;"> -->
-            <div class="group-loginInput">
-                <label class="show-label" for="id">아이디</label>
-                <input class="enter-field" type="text" id="id" name="id" required>
-            </div>
+        <div class="group-loginInput">
+            <label class="show-label" for="id">아이디</label>
+            <input class="enter-field" type="text" id="id" name="id" required>
+        </div>
 
-            <div class="group-loginInput">
-                <label class="show-label" for="pw">비밀번호</label>
-                <input class="enter-field" type="password" id="pw" name="pw" required onkeyup="enterKeyLogin(event)">
-            </div>
+        <div class="group-loginInput">
+            <label class="show-label" for="pw">비밀번호</label>
+            <input class="enter-field" type="password" id="pw" name="pw" required onkeyup="enterKeyLogin(event)">
+        </div>
 
-            <div class="remember-check">
-                <input type="checkbox" id="rememberMe">
-                <label for="rememberMe">아이디 기억하기</label>
-            </div>
+        <div class="remember-check">
+            <input type="checkbox" id="rememberMe">
+            <label for="rememberMe">아이디 기억하기</label>
+        </div>
 
-            <a href="./HLG_camera.html">
-                <button type="submit" class="click-loginButton">로그인</button>
-            </a>
+        <a href="./HLG_camera.html">
+            <button type="submit" class="click-loginButton">로그인</button>
+        </a>
 
         <!-- </form> -->
-            <nav class="navigate-links">
-                <a href="#" class="navigate-link">아이디 찾기</a>
-                <a href="#" class="navigate-link">비밀번호 찾기</a>
-                <a href="#" class="navigate-link">회원가입</a>
-            </nav>
+        <nav class="navigate-links">
+            <a href="#" class="navigate-link">아이디 찾기</a>
+            <a href="#" class="navigate-link">비밀번호 찾기</a>
+            <a href="#" class="navigate-link">회원가입</a>
+        </nav>
         </form>
     </div>
 </section>
@@ -54,69 +52,69 @@
 
     // 로그인 요청하는 함수
     // const requestLogin = () => {
-        // 서버와 통신하기 전에 입력값 검증
-        if (!validateFields()) {
-            return;
-        }
+    // 서버와 통신하기 전에 입력값 검증
+    if (!validateFields()) {
+        return;
+    }
 
-        const idElement = document.getElementById("id");
-        const pwElement = document.getElementById("pw");
-        const rememberMeElement = document.getElementById("rememberMe");
+    const idElement = document.getElementById("id");
+    const pwElement = document.getElementById("pw");
+    const rememberMeElement = document.getElementById("rememberMe");
 
-        // 서버와 통신을 가정
-        const userList = JSON.parse(localStorage.getItem("userList"));
+    // 서버와 통신을 가정
+    const userList = JSON.parse(localStorage.getItem("userList"));
 
-        // 회원가입한 사람이 한명도 없을 경우
-        if (userList === null) {
-            alert("아이디가 존재하지 않습니다.");
-            idElement.value = "";
-            pwElement.value = "";
-            idElement.focus();
-            return;
-        }
+    // 회원가입한 사람이 한명도 없을 경우
+    if (userList === null) {
+        alert("아이디가 존재하지 않습니다.");
+        idElement.value = "";
+        pwElement.value = "";
+        idElement.focus();
+        return;
+    }
 
-        const user = userList.find((user) => user.id === idElement.value);
+    const user = userList.find((user) => user.id === idElement.value);
 
-        if (user === undefined) {
-            alert("해당 아이디가 존재하지 않습니다.");
-            idElement.value = "";
-            pwElement.value = "";
-            idElement.focus();
-            return;
-        }
+    if (user === undefined) {
+        alert("해당 아이디가 존재하지 않습니다.");
+        idElement.value = "";
+        pwElement.value = "";
+        idElement.focus();
+        return;
+    }
 
-        if (user.pw !== pwElement.value) {
-            alert("비밀번호가 일치하지 않습니다.");
-            pwElement.value = "";
-            pwElement.focus();
-            return;
-        }
+    if (user.pw !== pwElement.value) {
+        alert("비밀번호가 일치하지 않습니다.");
+        pwElement.value = "";
+        pwElement.focus();
+        return;
+    }
 
-        if (user.deleteDate !== null) {
-            alert("탈퇴한 회원입니다.");
-            idElement.value = "";
-            pwElement.value = "";
-            idElement.focus();
-            return;
-        }
+    if (user.deleteDate !== null) {
+        alert("탈퇴한 회원입니다.");
+        idElement.value = "";
+        pwElement.value = "";
+        idElement.focus();
+        return;
+    }
 
-        // 로그인 성공 처리
-        if (rememberMeElement.checked) {
-            localStorage.setItem("rememberId", JSON.stringify(user.id));
-        } else {
-            localStorage.removeItem("rememberId");
-        }
+    // 로그인 성공 처리
+    if (rememberMeElement.checked) {
+        localStorage.setItem("rememberId", JSON.stringify(user.id));
+    } else {
+        localStorage.removeItem("rememberId");
+    }
 
-        const loginUser = {
-            idx: user.idx,
-            id: user.id,
-            profileImg: user.profileImg,
-            simpleDesc: user.simpleDesc,
-        };
-
-        localStorage.setItem("loginUser", JSON.stringify(loginUser));
-        location.href = "./HLG_camera.html";  // 카메라 페이지로 이동
+    const loginUser = {
+        idx: user.idx,
+        id: user.id,
+        profileImg: user.profileImg,
+        simpleDesc: user.simpleDesc,
     };
+
+    localStorage.setItem("loginUser", JSON.stringify(loginUser));
+    location.href = "./HLG_camera.html";  // 카메라 페이지로 이동
+    
 
     // 입력값 검증
     const validateFields = () => {
