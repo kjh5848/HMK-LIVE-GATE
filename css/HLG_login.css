@@ -1,0 +1,131 @@
+/* Display - Login */
+        .display-login {
+            align-items: center;
+            background-color: #f5f5f5;
+            display: flex;
+            min-height: 100vh;
+            padding: 16px;
+            width: 100%;
+        }
+
+        /* Contain - Login */
+        .contain-login {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            font-family: Arial, sans-serif;
+            margin: 0 auto;
+            max-width: 100%;
+            padding: 20px;
+            width: 100%;
+        }
+
+        @media (min-width: 480px) {
+            .contain-login {
+                max-width: 400px;
+                padding: 24px;
+            }
+        }
+
+
+/* Display - Title */
+.display-title {
+    color: #1a365d;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+@media (min-width: 480px) {
+    .display-title {
+        font-size: 24px;
+        margin-bottom: 24px;
+    }
+}
+
+/* Group - LoginInput */
+.group-loginInput {
+    max-width: 380px; /* 추가 */
+    margin-bottom: 16px;
+}
+
+/* Show - Label */
+.show-label {
+    color: #4a5568;
+    display: block;
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+/* Enter - Field */
+.enter-field {
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 16px;
+    padding: 10px;
+    transition: border-color 0.2s;
+    width: 100%;
+}
+
+.enter-field:focus {
+    border-color: #14b8a6;
+    outline: none;
+}
+
+/* Click - LoginButton */
+.click-loginButton {
+    background: #14b8a6;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 16px;
+    padding: 12px;
+    transition: background 0.2s;
+    width: 100%;
+}
+
+.click-loginButton:hover {
+    background: #0d9488;
+}
+
+/* Navigate - Links */
+.navigate-links {
+    display: flex;
+    font-size: 13px;
+    gap: 12px;
+    justify-content: center;
+    text-align: center;
+}
+
+@media (min-width: 480px) {
+    .navigate-links {
+        font-size: 14px;
+        gap: 16px;
+    }
+}
+
+.navigate-link {
+    color: #14b8a6;
+    text-decoration: none;
+}
+
+.navigate-link:hover {
+    text-decoration: underline;
+}
+
+ /* Remember - Check (새로 추가) */
+        .remember-check {
+            display: flex;
+            align-items: center;
+            margin-bottom: 16px;
+            font-size: 14px;
+            color: #4a5568;
+        }
+
+        .remember-check input {
+            margin-right: 8px;
+        }
