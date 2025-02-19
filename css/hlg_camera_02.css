@@ -1,0 +1,189 @@
+/* HLG Camera 섹션 */
+.hlg-camera {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 100%;
+   min-height: 100vh;
+   background-color: #e7e4e4;
+   padding: 0;
+}
+
+.hlg-camera__container {
+   background: rgb(255, 255, 255);
+   border-radius: 12px;
+   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+   font-family: Arial, sans-serif;
+   width: 100%;
+   max-width: 500px;
+   padding: 20px;
+   margin: 0 auto;
+}
+
+.hlg-camera__title {
+   color: #1a365d;
+   font-size: 24px;
+   font-weight: bold;
+   text-align: center;
+   margin-bottom: 24px;
+}
+
+.hlg-camera__view {
+   margin-bottom: 24px;
+}
+
+.hlg-camera__view-title {
+   font-size: 18px;
+   font-weight: bold;
+   margin-bottom: 8px;
+}
+
+.hlg-camera__video-container {
+   height: 200px;
+   background: #eee;
+   border-radius: 8px;
+   overflow: hidden;
+}
+
+.hlg-camera__video {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+
+.hlg-camera__button {
+   background: #14b8a6;
+   border: none;
+   border-radius: 8px;
+   color: white;
+   cursor: pointer;
+   font-size: 16px;
+   font-weight: bold;
+   margin-bottom: 16px;
+   padding: 12px;
+   transition: all 0.2s;
+   width: 100%;
+}
+
+.hlg-camera__button:hover {
+   background: #0d9488;
+}
+
+.hlg-camera__button--disabled {
+   background: #909090;
+   cursor: default;
+}
+
+.hlg-camera__notice {
+   text-align: center;
+   color: #666;
+   font-size: 14px;
+   margin-top: 16px;
+}
+
+.hlg-camera__select-group {
+   max-width: 380px;
+   margin-bottom: 16px;
+}
+
+.hlg-camera__select-label {
+   color: #4a5568;
+   display: block;
+   font-size: 14px;
+   margin-bottom: 6px;
+}
+
+.hlg-camera__select {
+   appearance: none;
+   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%234a5568' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat right 12px center;
+   border: 1px solid #e2e8f0;
+   border-radius: 8px;
+   color: #1a365d;
+   cursor: pointer;
+   font-size: 16px;
+   padding: 10px 36px 10px 10px;
+   transition: all 0.2s;
+   width: 100%;
+}
+
+.hlg-camera__select:hover {
+   border-color: #14b8a6;
+}
+
+.hlg-camera__select:focus {
+   border-color: #14b8a6;
+   outline: none;
+   box-shadow: 0 0 0 2px rgba(20, 184, 166, 0.1);
+}
+
+/* 모바일 */
+@media screen and (max-width: 480px) {
+   .hlg-camera__container {
+       border-radius: 0;
+       padding: 15px;
+       height: 100vh;
+   }
+
+   .hlg-camera__video-container {
+       margin-bottom: 15px;
+   }
+}
+
+/* 태블릿 */
+@media (min-width: 567px) {
+   .hlg-camera__container {
+       max-width: 900px;
+       padding: 20px;
+   }
+
+   .hlg-camera__title {
+       font-size: 24px;
+       margin-bottom: 26px;
+   }
+
+   .hlg-camera__video-container {
+       aspect-ratio: 16/9;
+       height: auto;
+   }
+
+   .hlg-camera__button {
+       padding: 16px;
+       font-size: 16px;
+   }
+}
+
+/* 중간 크기 화면 */
+@media (min-width: 768px) {
+   .hlg-camera__container {
+       max-width: 700px;
+   }
+
+   .hlg-camera__title {
+       font-size: 22px;
+       margin-bottom: 22px;
+   }
+
+   .hlg-camera__view {
+       margin-bottom: 22px;
+   }
+}
+
+/* 데스크톱 */
+@media (min-width: 1024px) {
+   .hlg-camera__container {
+       max-width: 500px;
+   }
+
+   .hlg-camera__title {
+       margin-bottom: 24px;
+   }
+
+   .hlg-camera__view {
+       margin-bottom: 24px;
+   }
+
+   .hlg-camera__button {
+       padding: 12px;
+       font-size: 16px;
+   }
+}

@@ -1,5 +1,6 @@
-@import "reset.css";
-@import "HLG_camera.css";
-@import "HLG_login.css";
+@import url(reset.css);
+@import url(HLG_camera.css);
+@import url(hlg_camera_02.css);
+@import url(HLG_login.css);
 
 
